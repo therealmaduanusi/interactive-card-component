@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Overpass", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100svh;
+    background: #ffffff;
+    background-image: url('./images/bg-img.svg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.card-container {
+    width: 100%;
+    color: white;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container img {
+    display: block;
+    max-width: 24rem;
+}
+.card-container img:last-child {
+    position: absolute;
+    right: 50%;
+    bottom: 10%;
+}
+
+.card-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+form {
+    padding: 5%;
+    width: 80%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Overpass", sans-serif;
+}
+input:hover {
+    border-image: linear-gradient(#6348FE, #610595) 10% / 1px ; 
+    /* border-image must equal focus */
+}
+input:focus {
+    border-image-slice: 1;
+    outline: none;
+    border-image: linear-gradient(#6348FE, #610595) 10% / 1px ;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #21092F;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.exp-date {
+    display: flex;
+    gap: 10px;
+}
+
+.exp-date input {
+    width: 50%;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+    margin-bottom: 0.5rem;
+}
+
+.borderError {
+    border: 1px solid red;
+}
+
+/* success style */
+.card-form img{
+    display: block;
+}
+
+.card-form h1 {
+    margin: 1rem 0.6rem 0;
+}
+.card-form a {
+    text-decoration: none;
+    background-color: #21092F;
+    color: #fff;
+    padding: 0.7rem 0;
+    display: inline-block;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* media query */
+@media (max-width: 1114px) {
+    .card-container img {
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        background-image: url('/images/md-bg-img.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        align-items: start;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0.5rem;
+        row-gap: 7rem;
+    }
+
+    .card-container {
+        align-items: center;
+        margin-top: 2.5rem;
+        row-gap: 0.5rem;
+
+    }
+
+    .card-container img {
+        width: 100%;
+    }
+
+    .card-container img:last-child {
+        position: relative;
+        order: 1;
+        align-self: flex-end;
+        left: 0;
+    }
+
+    .card-container img:first-child {
+        position: relative;
+        order: 2;
+        align-self: flex-start;
+        bottom: 70px;
+        z-index: 1;
+    }
+
+    form{
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        row-gap: 0rem;
+    }
+}
+
+@media (min-width: 830px) {
+    body {
+        align-items: center;
+    }
+    .card-container {
+        padding: 0 20px;
+    }
+}
